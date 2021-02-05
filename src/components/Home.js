@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { addToCart } from './actions/cartActions'
-import {Dropdown,DropdownToggle,DropdownMenu,DropdownItem,DropdownButton} from 'reactstrap';
+
 
  class Home extends Component{
    
@@ -21,13 +21,31 @@ import {Dropdown,DropdownToggle,DropdownMenu,DropdownItem,DropdownButton} from '
       sortByNameHandler=()=>
     {
 
-        const itemData=this.props.items.sort((a,b)=>a.title.localeCompare(b.title))
-        this.setState=
-        {
-            itemData:itemData
-        }
+        const itemData2=this.props.items.sort((a,b)=>a.title.localeCompare(b.title))
+
+        this.setState(
+            {itemData: itemData2}
+        );
+        
+       console.log(itemData2)
        
-       
+    }
+
+    sortByPriceHandler=()=>
+    {
+        const itemData2=this.props.items.sort((a, b) => (a.price > b.price) ? 1 : (a.price === b.price) ? ((a.price > b.price) ? 1 : -1) : -1 )
+        this.setState(
+            {itemData: itemData2}
+        );
+    }
+
+    componentDidMount()
+    {
+        this.setState(
+            {itemData:this.props.items}
+            
+            );
+            console.log('hi')
     }
     
 
@@ -73,7 +91,7 @@ import {Dropdown,DropdownToggle,DropdownMenu,DropdownItem,DropdownButton} from '
            
            
            
-             { console.log(this.state.itemData)}  
+             {/* { console.log(this.state.itemData)}   */}
              
             <button className="btn btn-primary" onClick={()=>this.sortByNameHandler()}>Sort by Name</button>
             <button className="btn btn-success" onClick={()=>this.sortByPriceHandler()}>Sort by  Price</button>

@@ -4,7 +4,7 @@ import logo from '../images/logo.png'
 import { connect } from 'react-redux'
 import {Component} from 'react';
 
-import Filter from './Filter'
+
 
 class Navbar extends Component{
     render()
@@ -18,7 +18,7 @@ class Navbar extends Component{
                     <ul className="right">
                         <li><Link to="/">Shop</Link></li>
                         <li><Link to="/cart">My cart</Link></li>
-                        <li><Link to="/cart"><img src={logo}></img></Link></li>
+                        <li><Link to="/cart"><img src={logo} alt="logo"></img></Link></li>
                         <li><div className="cart-counter"><p>{this.props.items.length}</p></div></li>
                        
                         

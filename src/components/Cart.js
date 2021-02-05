@@ -30,7 +30,7 @@ class Cart extends Component{
                        
                         <li className="collection-item avatar" key={item.id}>
                                     <div className="item-img"> 
-                                        <img src={item.img} alt={item.img} className=""/>
+                                        <img src={item.img}  alt="item_image"/>
                                     </div>
                                 
                                     <div className="item-desc">
@@ -41,8 +41,8 @@ class Cart extends Component{
                                             <b>Quantity: {item.quantity}</b> 
                                         </p>
                                         <div className="add-remove">
-                                            <Link to="/cart"><img src={up_arrow} onClick={()=>{this.handleAddQuantity(item.id)}} style={{height:"50px".includes,width:"50px"}}></img></Link>
-                                            <Link to="/cart"><img src={down_arrow} onClick={()=>{this.handleSubtractQuantity(item.id)}} style={{height:"50px".includes,width:"50px"}}></img></Link>
+                                            <Link to="/cart"><img src={up_arrow} alt="up_arrow" onClick={()=>{this.handleAddQuantity(item.id)}} style={{height:"50px".includes,width:"50px"}}></img></Link>
+                                            <Link to="/cart"><img src={down_arrow} alt="down_arrow" onClick={()=>{this.handleSubtractQuantity(item.id)}} style={{height:"50px".includes,width:"50px"}}></img></Link>
                                         </div>
                                         <button className="rmv-btn" onClick={()=>{this.handleRemove(item.id)}}>Remove</button>
                                     </div>
